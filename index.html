@@ -10,6 +10,7 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <title>CEG Tech Web AR</title>
 
+    <!--
     <script>
         window.onload = () => {
             navigator.geolocation.getCurrentPosition((position) => {
@@ -17,6 +18,7 @@
             });
         }
     </script>
+    -->
 
 
 </head>
@@ -25,7 +27,7 @@
     <a-scene vr-mode-ui="enabled: false" embedded arjs>
 
         <a-text value="This content will always face you." look-at="[gps-camera]" scale="5 5 5"></a-text>
-        <a-camera gps-camera rotation-reader></a-camera>
+        <a-camera gps-camera rotation-reader simulateLatitude="-23.73379" simulateLongitude="-46.68332"></a-camera>
 
         <!-- 
             <a-marker preset="hiro">
