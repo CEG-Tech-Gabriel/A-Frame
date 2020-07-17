@@ -8,6 +8,8 @@
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="gesture-detector.js"></script>
+    <script src="gesture-handler.js"></script>
     <title>CEG Tech Web AR</title>
 
     <!--
@@ -24,7 +26,7 @@
 </head>
 
 <body style="margin : 0px; overflow: hidden;">
-    <a-scene vr-mode-ui="enabled: false" embedded arjs>
+    <a-scene vr-mode-ui="enabled: false" embedded arjs gesture-detector id="scene">
 
         <!--
         <a-text value="This content will always face you." scale="5 5 5"
@@ -32,8 +34,9 @@
         <a-camera gps-camera rotation-reader></a-camera>
         -->
 
-        <a-marker preset="hiro">
-            <a-entity position="0 0 0" rotation="-75 0 0" scale="0.05 0.05 0.05" gltf-model="Assets\Models\Ponte_Estaiada.gltf">
+        <a-marker preset="hiro" emitevents="true">
+            <a-entity position="0 0 0" rotation="-75 0 0" scale="0.05 0.05 0.05"
+                gltf-model="Assets\Models\Ponte_Estaiada.gltf" class="clickable" gesture-handler>
             </a-entity>
         </a-marker>
         <a-entity camera></a-entity>
